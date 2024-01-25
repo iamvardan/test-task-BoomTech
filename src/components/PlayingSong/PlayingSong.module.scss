@@ -1,0 +1,82 @@
+@import "../../variables.scss";
+
+.playingSong {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 40px);
+    height: 60px;
+    background-color: $baseColor;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    transition: .4s;
+    box-shadow: 0 45px 78px rgba(0, 0, 0, 0.25), 0 2px 13px 10px rgba(0, 0, 0, 0.22);
+
+    @media (max-width: $mobileSize) {
+        font-size: 12px;
+    }
+
+    .closeButtton {
+        cursor: pointer;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        @media (max-width: $tabletSize) {
+            width: unset;
+        }
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @media (max-width: $mobileSize) {
+            gap: 20px;
+            button {
+                font-size: 12px;
+            }
+        }
+
+        button {
+            font-size: 20px;
+            line-height: 0;
+            width: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+    .tools {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+            transition: .2s;
+            @media (max-width: $mobileSize) {
+                display: none;
+            }
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+    }
+}
+
+.playingSong.hidden {
+    height: 0px;
+    overflow: hidden;
+}

@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+.app {
+    display: flex;
+    align-items: flex-start;
+
+    @media (max-width: $smallScreen) {
+        justify-content: space-between;
+    }
+
+    @media (max-width: $tabletSize) {
+        flex-direction: column-reverse;
+    }
+}
